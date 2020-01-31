@@ -1,7 +1,7 @@
 0x00 Shell, basics is a Holberton project about Shell, what it is, and how to use it.
 
-| Script Names: | Descriptions: |
-| ------------- | ------------- |
+| Scripts: | Descriptions: |
+| -------- | ------------- |
 | 0-current\_working\_directory | Prints the absolute path name of the current working directory. |
 | 1-listit | Displays the contents of your current directory. |
 | 2-bring\_me\_home | Changes the working directory to the user’s home directory. |
