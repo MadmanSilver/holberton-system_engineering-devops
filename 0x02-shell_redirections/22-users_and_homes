@@ -1,0 +1,2 @@
+#!/bin/bash
+cut --delimiter=':' -f 1,7
