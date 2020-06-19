@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# reads and cuts of course!
+cat /etc/passwd | while read line
+do
+    echo "$line" | cut --delimiter=":" -f1,3,6
+done

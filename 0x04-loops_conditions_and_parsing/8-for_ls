@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Wierd ls thing
+for file in *
+do
+    echo "$file" | cut --delimiter="-" -f2-
+done
