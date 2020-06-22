@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This life as you now live it and have lived it, you will have to live once more and innumerable times more.
+if [ "$1" = start ]
+then
+    sudo -b ./manage_my_process
+    echo "$(pgrep -f './manage_my_process')" | head -1 > /var/run/my_process.pid
+    echo "manage_my_process started"
+elif [ "$1" = stop ]
+then
+    kill "$(cat /var/run/my_process.pid)"
+    rm /var/run/my_process.pid
+    echo "manage_my_process stopped"
+elif [ "$1" = restart ]
+then
+    kill "$(cat /var/run/my_process.pid)"
+    rm /var/run/my_process.pid
+    sudo -b ./manage_my_process
+    echo "$(pgrep -f './manage_my_process')" | head -1 > /var/run/my_process.pid
+    echo "manage_my_process restarted"
+else
+    echo "Usage: manage_my_process {start|stop|restart}"
+fi

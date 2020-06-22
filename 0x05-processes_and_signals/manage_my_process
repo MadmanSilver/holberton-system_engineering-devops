@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# One may tolerate a world of daemons for the sake of an angel.
+while ((1))
+do
+    echo "I am alive!" >> /tmp/my_process
+    sleep 2
+done
