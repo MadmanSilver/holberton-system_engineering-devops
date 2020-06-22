@@ -10,26 +10,17 @@ int infinite_while(void);
  */
 int main(void)
 {
-	int pid1, pid2, pid3, pid4, pid5;
+	int i, pid1 = -1;
 
-	pid1 = fork();
-	if (pid1)
+	for (i = 0; i < 5; i++)
+	{
+		pid1 = fork();
+		if (pid1 == 0)
+			return (0);
 		printf("Zombie process created, PID: %d\n", pid1);
-	pid2 = fork();
-	if (pid1 && pid2)
-		printf("Zombie process created, PID: %d\n", pid2);
-	pid3 = fork();
-	if (pid1 && pid2 && pid3)
-		printf("Zombie process created, PID: %d\n", pid3);
-	pid4 = fork();
-	if (pid1 && pid2 && pid3 && pid4)
-		printf("Zombie process created, PID: %d\n", pid4);
-	pid5 = fork();
-	if (pid1 && pid2 && pid3 && pid4 && pid5)
-		printf("Zombie process created, PID: %d\n", pid5);
+	}
 
-	if (pid1 && pid2 && pid3 && pid4 && pid5)
-		infinite_while();
+	infinite_while();
 
 	return (0);
 }
