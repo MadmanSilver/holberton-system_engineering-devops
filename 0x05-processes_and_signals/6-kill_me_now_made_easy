@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Tis a vile thing to die, my gracious lord, when men are unprepared and look not for it.
+pkill -f "./4-to_infinity_and_beyond"

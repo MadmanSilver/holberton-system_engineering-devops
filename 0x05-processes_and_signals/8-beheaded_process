@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# It's better to burn out, than to fade away.
+pkill -9 -f "./7-highlander"
