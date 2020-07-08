@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# I'm a good listener
+nc -l 98
