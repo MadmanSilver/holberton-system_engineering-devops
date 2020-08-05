@@ -7,3 +7,4 @@ sudo mv index.html /var/www/html/
 sudo mkdir /var/www/html/redirect_me
 str="\trewrite ^/redirect_me$ https://www.youtube.com/watch?v=oHg5SJYRHA0 permanent;\n}"
 sudo sed -i "s@^}@$str@" /etc/nginx/sites-available/default
+sudo service nginx restart
