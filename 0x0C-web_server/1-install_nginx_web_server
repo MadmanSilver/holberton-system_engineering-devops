@@ -5,3 +5,4 @@ sudo apt-get -y install nginx
 echo "Holberton School" > index.html
 sudo rm /var/www/html/index.nginx-debian.html
 sudo mv index.html /var/www/html/
+sudo service nginx restart
