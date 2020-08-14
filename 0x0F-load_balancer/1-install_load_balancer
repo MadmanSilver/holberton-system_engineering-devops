@@ -2,5 +2,5 @@
 # sets up a load balancer server
 sudo apt-get update
 sudo apt-get -y install haproxy
-echo "\n\nlisten firstbalance\n\tbind *:80\n\tbalance roundrobin\n\toption forwardfor\n\tserver 1704-web-01 34.75.211.75:80\n\tserver 1704-web-02 54.242.199.6:80" | sudo tree -a /etc/haproxy/haproxy.cfg
+echo -e "\nlisten firstbalance\n\tbind *:80\n\tbalance roundrobin\n\toption forwardfor\n\tserver 1704-web-01 34.75.211.75:80\n\tserver 1704-web-02 54.242.199.6:80" | sudo tee -a /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
