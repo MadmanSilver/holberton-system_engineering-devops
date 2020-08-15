@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Fixes nginx to run on port 80
+str="\tlisten 80 default_server;"
+rep="\tlisten 8080 default_server;"
+sudo sed -i "s@$rep@$str@" /etc/nginx/sites-enabled/default
+str="\tlisten \[::\]:80 default_server ipv6only=on;"
+rep="\tlisten \[::\]:8080 default_server ipv6only=on;"
+sudo sed -i "s@$rep@$str@" /etc/nginx/sites-enabled/default
+sudo service nginx start
