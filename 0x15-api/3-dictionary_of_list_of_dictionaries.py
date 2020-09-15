@@ -19,7 +19,7 @@ if __name__ == "__main__":
             json['{}'.format(user.get('id'))].append({'\
 task': todo.get('title'), '\
 completed': todo.get('completed'), '\
-username': user.get('name')})
+username': user.get('username')})
 
     with open('todo_all_employees.json', 'w') as f:
         dump(json, f)
