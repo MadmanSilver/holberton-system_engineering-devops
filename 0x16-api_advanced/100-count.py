@@ -26,7 +26,6 @@ def count_words(subreddit, word_list, after=None, keyword=None):
                 for word in post.get('data').get('title').split():
                     if word.lower() == keyword.lower():
                         count += 1
-                        print('{}: {}'.format(word, count))
 
         after = hot.get('data').get('after')
 
@@ -36,7 +35,7 @@ def count_words(subreddit, word_list, after=None, keyword=None):
         return count
 
     res = {}
-    for word in word_list.split():
+    for word in word_list:
         res[word] = count_words(subreddit, None, None, word)
 
     for item in sorted(res.items(), key=operator.itemgetter(1), reverse=True):
